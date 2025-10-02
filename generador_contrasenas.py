@@ -35,11 +35,11 @@ def verificar_contrasena(password):
 
     # Evaluación de seguridad
     if len(password) < 8 or categorias < 3 or entropia < 50:
-        nivel = "Débil ❌"
+        nivel = "Débil "
     elif len(password) >= 12 and categorias == 4 and entropia >= 70:
-        nivel = "Fuerte ✅"
+        nivel = "Fuerte "
     else:
-        nivel = "Media ⚠️"
+        nivel = "Media "
 
     print("\n🔎 Análisis de tu contraseña:")
     print(f"- Longitud: {len(password)}")
@@ -83,7 +83,7 @@ def generar_contrasena(longitud=12, excluir_similares=True):
     random.shuffle(password)
 
     resultado = ''.join(password)
-    print(f"🔐 Contraseña generada: {resultado}\n")
+    print(f" Contraseña generada: {resultado}\n")
     verificar_contrasena(resultado)
 
 def menu():
@@ -97,10 +97,10 @@ def menu():
         longitud = int(longitud) if longitud.strip() != "" else 12
         generar_contrasena(longitud)
     elif opcion == "2":
-        password = input("✍️ Escribí tu contraseña para analizar: ")
+        password = input(" Escribí tu contraseña para analizar: ")
         verificar_contrasena(password)
     else:
-        print("❌ Opción no válida.")
+        print(" Opción no válida.")
 
 if __name__ == "__main__":
     menu()
